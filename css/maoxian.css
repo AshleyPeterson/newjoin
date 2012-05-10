@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding: 10px 15px;
+    background-color: #000;
+    color: #f0f0f0;
+}
+/* contain color blocks in the left part */
+#leftbox {
+    width: 260px;
+    float: left;
+}
+/*end*/
+/* contain color blocks in the right part */
+#rightbox {
+    height: 600px;
+    width: 700px;
+    float: left;
+    margin: 0 0 0 10px;
+}
+/*end*/
+.block {
+    margin: 3px;
+    float: left;
+    font-size: 14px;
+    cursor: pointer;
+}
+.block:hover {
+    background-color: #000;
+}
+#horizonal {
+    width: 166px;
+}
+li {
+    list-style: none;
+}
+.tech,.manage,.pr,.resource,.news {
+    width: 80px;
+    height: 80px;
+}
+/* black */
+.tech {
+    background-color: yellow;
+}
+/* grey */
+.manage {
+    background-color: #c9d5d1;
+}
+/* green */
+.pr {
+    background-color: #9ae21a;
+}
+/* red */
+.resource {
+    background-color: #cf274a;
+}
+/* blue */
+.news {
+    background-color: #1aa1e2;
+}
+#headline {
+    text-align: center;
+    font-size: 56px;
+}
+#para {
+    height: 446px;
+    border: solid 1px #fff;
+    margin-left: 10px;
+    background-color: #c0c0c0;
+    opacity: 0.8
+}
+#guide {
+    float: right;
+    margin: 3px 0 0 0;
+    height: 86px;
+}
+.button {
+    background-color: #686763;
+}
+#footer {
+    text-align: center;
+    width: 100%;
+    float: left;
+    font-size: 11px;;
+    color: #707070;
+    margin: 10px 0 0 0;
+}
