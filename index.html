@@ -9,8 +9,15 @@ PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
         <![endif]-->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/shadowbox.css" />
         <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
         <script type="text/javascript" src="js/slide.js"></script>
+        <script type="text/javascript" src="js/shadowbox.js"></script>
+        <script type="text/javascript">
+            Shadowbox.init({
+                    overlayOpacity: 0.9
+            });
+        </script>
         <title>自强招新 - join us！</title>
     </head>
     <body>
@@ -19,92 +26,278 @@ PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         <div id="frame_left">
             <a href="javascript:location.reload()"><div id="frame_left_logo"></div></a>
             <ul>
-                <li class="center_logo center_logo_left" id="manage" onclick="nav_slide('nav_for_site','nav_for_manage')"></li>
-                <li class="center_logo center_logo_right" id="news" onclick="nav_slide('nav_for_site','nav_for_news')"></li>
-                <li class="center_logo center_logo_left" id="tech" onclick="nav_slide('nav_for_site','nav_for_tech')"></li>
-                <li class="center_logo center_logo_right" id="scheme" onclick="nav_slide('nav_for_site','nav_for_scheme')"></li>
-                <li class="center_logo center_logo_left" id="resource" onclick="nav_slide('nav_for_site','nav_for_resource')"></li>
+                <li class="center_logo center_logo_left" id="manage" onclick="nav_slide('nav_for_site','nav_for_manage');content_slide('site_main','manage_main');"></li>
+                <li class="center_logo center_logo_right" id="news" onclick="nav_slide('nav_for_site','nav_for_news');content_slide('site_main','news_main');"></li>
+                <li class="center_logo center_logo_left" id="tech" onclick="nav_slide('nav_for_site','nav_for_tech');content_slide('site_main','tech_main');"></li>
+                <li class="center_logo center_logo_right" id="scheme" onclick="nav_slide('nav_for_site','nav_for_scheme');content_slide('site_main','scheme_main');"></li>
+                <li class="center_logo center_logo_left" id="resource" onclick="nav_slide('nav_for_site','nav_for_resource');content_slide('site_main','resource_main');"></li>
             </ul>
         </div>
         <div id="frame_right">
             <div class="frame_right_nav" id="nav_for_site">
-                <span id="site_name">自强学堂网站</span>
+                <span class="site_name">自强学堂网站</span>
                 <span id="aboutus">About Us</span>
             </div>
+            <div class="frame_right_nav" id="nav_for_join">
+                <span class="arrow_spec" onclick="nav_slide('nav_for_join','nav_for_site');content_slide('join_main','site_main');"></span>
+                <span class="site_name">自强学堂网站</span>
+                <span id="joinus">Join Us</span>
+            </div>
             <div class="frame_right_nav" id="nav_for_manage">
-                <span id="arrow" onclick="nav_slide('nav_for_manage','nav_for_site')"></span>
-                <span id="center_name">站务管理中心</span>
+                <span class="arrow" onclick="nav_slide('nav_for_manage','nav_for_site');content_slide('manage_main','site_main');"></span>
+                <span class="center_name">站务管理中心</span>
                 <ul>
                     <li class="department">中心简介</li>
-                    <li class="department">协调管理部</li>
-                    <li class="department">团队建设部</li>
-                    <li class="department">人力资源小组</li>
+                    <li class="department" onclick="content_slide('manage_main','coordinate');">协调管理部</li>
+                    <li class="department" onclick="content_slide('manage_main','teambuild');">团队建设部</li>
                 </ul>
             </div>
             <div class="frame_right_nav" id="nav_for_news">
-                <span id="arrow" onclick="nav_slide('nav_for_news','nav_for_site')"></span>
-                <span id="center_name">新闻中心</span>
+                <span class="arrow" onclick="nav_slide('nav_for_news','nav_for_site');content_slide('news_main','site_main');"></span>
+                <span class="center_name">新闻中心</span>
                 <ul>
                     <li class="department">中心简介</li>
-                    <li class="department">视频部</li>
-                    <li class="department">记者团</li>
+                    <li class="department" onclick="content_slide('manage_main','reporter');">记者团</li>
+                    <li class="department" onclick="content_slide('manage_main','photo');">摄影组</li>
+                    <li class="department" onclick="content_slide('manage_main','wireless');">无线服务部</li>
                 </ul>
             </div>
             <div class="frame_right_nav" id="nav_for_tech">
-                <span id="arrow" onclick="nav_slide('nav_for_tech','nav_for_site')"></span>
-                <span id="center_name">技术中心</span>
+                <span class="arrow" onclick="nav_slide('nav_for_tech','nav_for_site');content_slide('tech_main','site_main');"></span>
+                <span class="center_name">技术中心</span>
                 <ul>
                     <li class="department">中心简介</li>
-                    <li class="department">视觉设计</li>
-                    <li class="department">前端开发</li>
-                    <li class="department">后台代码</li>
-                    <li class="department">运营维护</li>
-                    <li class="department">PM小组</li>
+                    <li class="department" onclick="content_slide('manage_main','design');">视觉设计</li>
+                    <li class="department" onclick="content_slide('manage_main','dev');">代码研发</li>
                 </ul>
             </div>
             <div class="frame_right_nav" id="nav_for_scheme">
-                <span id="arrow" onclick="nav_slide('nav_for_scheme','nav_for_site')"></span>
-                <span id="center_name">策划中心</span>
+                <span class="arrow" onclick="nav_slide('nav_for_scheme','nav_for_site');content_slide('scheme_main','site_main');"></span>
+                <span class="center_name">策划中心</span>
                 <ul>
                     <li class="department">中心简介</li>
-                    <li class="department">公关企划部</li>
-                    <li class="department">外联部</li>
+                    <li class="department" onclick="content_slide('manage_main','pr');">公关企划部</li>
+                    <li class="department" onclick="content_slide('manage_main','liaison');">外联部</li>
                 </ul>
             </div>
             <div class="frame_right_nav" id="nav_for_resource">
-                <span id="arrow" onclick="nav_slide('nav_for_resource','nav_for_site')"></span>
-                <span id="center_name">栏目中心</span>
+                <span class="arrow" onclick="nav_slide('nav_for_resource','nav_for_site');content_slide('resource_main','site_main');"></span>
+                <span class="center_name">栏目中心</span>
                 <ul>
                     <li class="department">中心简介</li>
-                    <li class="department">无线服务部</li>
-                    <li class="department">毛线社区</li>
-                    <li class="department">自强科教</li>
-                    <li class="department">茶馆BBS</li>
+                    <li class="department" onclick="content_slide('manage_main','miao');">毛线社区</li>
+                    <li class="department" onclick="content_slide('manage_main','edu');">自强科教</li>
+                    <li class="department" onclick="content_slide('manage_main','bbs');">茶馆BBS</li>
+                    <li class="department" onclick="content_slide('manage_main','video');">视频部</li>
                 </ul>
             </div>
-            <p class="frame_right_content" id="tech_main">
-                <span class="p_content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们以“服务学生生活，记录学校发展”为己任，立足于校园生活，为打造一流的武汉大学门户网站而努力。</span>
-                <span class="p_content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们有五大中心，新闻，栏目，策划，技术，站管，各个中心部门各司其职。共同构成了自强完整的运行体系。</span>
-                <span class="p_content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们不断追求成长，顺应时代潮流改革内部体制，不断创新，不断尝试，不断发展，引领校园生活。</span>
-                <span class="p_content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们充分融入学生的学习生活中，记录校园的点滴，缩短学生间彼此的距离，成为一座坚实的桥梁。</span>
-                <span class="p_content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们有着良好的氛围，让你找到心灵的港湾，成员之间相互关心、相互帮助，将自强变成了一个大家庭。</span>
-                <span class="p_content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们组织各种各样的活动，从部门内部，整个团体，到整个校园，让你充分感受到自强的魅力。</span>
+
+<!-------------------------------------------------------------------------------->
+            <!-- site_main start -->
+            <p class="frame_right_content" id="site_main">
+                我们以“服务学生生活，记录学校发展”为己任，立足于校园生活，为打造一流的武汉大学门户网站而努力。
+                <br />
+                我们有五大中心，新闻，栏目，策划，技术，站管，各个中心部门各司其职。共同构成了自强完整的运行体系。
+                <br />
+                我们不断追求成长，顺应时代潮流改革内部体制，不断创新，不断尝试，不断发展，引领校园生活。
+                <br />
+                我们充分融入学生的学习生活中，记录校园的点滴，缩短学生间彼此的距离，成为一座坚实的桥梁。
+                <br />
+                我们有着良好的氛围，让你找到心灵的港湾，成员之间相互关心、相互帮助，将自强变成了一个大家庭。
+                <br />
+                我们组织各种各样的活动，从部门内部，整个团体，到整个校园，让你充分感受到自强的魅力。
             </p>
+            <!-- site_main end -->
+
+<!-------------------------------------------------------------------------------->
+            <!-- manage_main start -->
+            <p class="frame_right_content" id="manage_main">
+            站务管理中心介绍
+            </p>
+            <!-- manage_main end -->
+            <p class="frame_right_content" id="coordinate">
+            协调管理部介绍
+            </p>
+            <p class="frame_right_content" id="teambuild">
+            团队建设部介绍
+            </p>
+
+<!-------------------------------------------------------------------------------->
+            <!-- news_main start -->
+            <p class="frame_right_content" id="news_main">
+            新闻中心的介绍
+            </p>
+            <!-- news_main end -->
+            <p class="frame_right_content" id="reporter">
+            记者团介绍
+            </p>
+            <p class="frame_right_content" id="photo">
+            摄影组介绍
+            </p>
+            <p class="frame_right_content" id="wireless">
+            无线服务部介绍
+            </p>
+
+<!-------------------------------------------------------------------------------->
+            <!-- tech_main start -->
+            <p class="frame_right_content" id="tech_main">
+            技术中心的介绍
+            </p>
+            <!-- tech_main end -->
+            <p class="frame_right_content" id="design">
+            视觉设计部介绍
+            </p>
+            <p class="frame_right_content" id="dev">
+            代码研发部介绍
+            </p>
+
+<!-------------------------------------------------------------------------------->
+            <!-- scheme_main start -->
+            <p class="frame_right_content" id="scheme_main">
+            策划中心的介绍
+            </p>
+            <!-- scheme_main end -->
+            <p class="frame_right_content" id="pr">
+            公关企划部介绍
+            </p>
+            <p class="frame_right_content" id="liaison">
+            外联部介绍
+            </p>
+
+
+<!-------------------------------------------------------------------------------->
+            <!-- resource_main start -->
+            <p class="frame_right_content" id="resource_main">
+            栏目中心的介绍
+            </p>
+            <!-- resource_main end -->
+            <p class="frame_right_content" id="miao">
+            毛线社区介绍
+            </p>
+            <p class="frame_right_content" id="edu">
+            自强科教介绍
+            </p>
+            <p class="frame_right_content" id="bbs">
+            茶馆BBS介绍
+            </p>
+            <p class="frame_right_content" id="video">
+            视频部介绍
+            </p>
+
+<!-------------------------------------------------------------------------------->
+            <!--start apply form-->
+            <form>
+            <p class="frame_right_content" id="join_main">
+                <span class="item_tag">姓名</span>
+                <input type="text" name="yourname" class="input_tag" />
+                <select name="sex" class="menu_short">
+                    <option value="none" selected="selected">性别</option>
+                    <option value="male">男</option>
+                    <option value="female">女</option>
+                </select>
+                <br />
+                <span class="item_tag">学院</span>
+                <input type="text" name="collegename" class="input_tag" />
+                <select name="grade" class="menu_short">
+                    <option value="none" selected="selected">年级</option>
+                    <option value="junior1">大一</option>
+                    <option value="junior2">大二</option>
+                    <option value="junior3">大三</option>
+                    <option value="junior4">大四</option>
+                    <option value="senior1">研一</option>
+                    <option value="senior2">研二</option>
+                    <option value="doctor">博士</option>
+                </select>
+                <br />
+                <span class="item_tag">手机</span>
+                <input type="text" name="mobile" class="input_tag" />
+                <br />
+                <span class="item_tag">寝室</span>
+                <input type="text" name="dorm" class="input_tag" />
+                <br />
+                <span class="item_tag">邮箱</span>
+                <input type="text" name="mail" class="input_tag" />
+                <br />
+                <span class="item_tag">优点</span>
+                <input type="text" name="advantages" class="input_tag" />
+                <br />
+                <select name="first_department" class="menu_long">
+                    <option value="none" selected="selected">最想加入的部门</option>
+                    <option value="design">视觉设计部</option>
+                    <option value="dev">开发部</option>
+                    <option value="pm">PM小组</option>
+                    <option value="teambuild">团队建设部</option>
+                    <option value="coordinate">协调管理部</option>
+                    <option value="hr">人力资源小组</option>
+                    <option value="video">视频部</option>
+                    <option value="reporter">记者团</option>
+                    <option value="pr">公关企划部</option>
+                    <option value="liaison">外联部</option>
+                    <option value="wireless">无线服务部</option>
+                    <option value="miao">毛线社区</option>
+                    <option value="edu">自强科教</option>
+                    <option value="bbs">茶馆BBS</option>
+                </select>
+                <br />
+                <select name="second_department" class="menu_long">
+                    <option value="none" selected="selected">次想加入的部门</option>
+                    <option value="design">视觉设计部</option>
+                    <option value="dev">开发部</option>
+                    <option value="pm">PM小组</option>
+                    <option value="teambuild">团队建设部</option>
+                    <option value="coordinate">协调管理部</option>
+                    <option value="hr">人力资源小组</option>
+                    <option value="video">视频部</option>
+                    <option value="reporter">记者团</option>
+                    <option value="pr">公关企划部</option>
+                    <option value="liaison">外联部</option>
+                    <option value="wireless">无线服务部</option>
+                    <option value="miao">毛线社区</option>
+                    <option value="edu">自强科教</option>
+                    <option value="bbs">茶馆BBS</option>
+                </select>
+                <br />
+                <textarea onfocus="this.value='';this.style.color='#424242'" onblur="this.value='为什么要加入自强，请给出自强录用你的理由。';this.style.color='#979797'">为什么要加入自强，请给出自强录用你的理由。</textarea>
+                <br />
+                <input type="submit" value="报名" id="submit_button" />
+            </p>
+            </form>
+            <!--end apply form-->
             <div id="frame_right_button">
                 <ul>
-                    <li class="show_pic">PIC</li>
-                    <li class="show_pic">PIC</li>
-                    <li class="show_pic">PIC</li>
-                    <li class="show_pic">PIC</li>
-                    <li class="show_pic">PIC</li>
-                    <li class="show_pic"></li>
+                    <li class="show_pic">
+                        <a href="pic/pic1.jpg" rel="shadowbox[ziqiang]" title="说明文字">
+                            <img src="pic/pic1.jpg" alt="pic1" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic1" />
+                        </a>
+                    </li>
+                    <li class="show_pic">
+                        <a href="pic/pic2.jpg" rel="shadowbox[ziqiang]" title="说明文字">
+                            <img src="pic/pic2.jpg" alt="pic2" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic2" />
+                        </a>
+                    </li>
+                    <li class="show_pic">
+                        <a href="pic/pic3.jpg" rel="shadowbox[ziqiang]" title="说明文字">
+                            <img src="pic/pic3.jpg" alt="pic3" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic3" />
+                        </a>
+                    </li>
+                    <li class="show_pic">
+                        <a href="pic/pic4.jpg" rel="shadowbox[ziqiang]" title="说明文字">
+                            <img src="pic/pic4.jpg" alt="pic4" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic4" />
+                        </a>
+                    </li>
+                    <li class="show_pic">
+                        <a href="pic/pic5.jpg" rel="shadowbox[ziqiang]" title="说明文字">
+                            <img src="pic/pic5.jpg" alt="pic5" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic5" />
+                        </a>
+                    </li>
+                    <li class="show_pic" onclick="nav_slide('nav_for_site','nav_for_join');content_slide('site_main','join_main');"></li>
                 </ul>
             </div>
         </div>
         <div id="footer">
             ©<span class="weak_highlight"><a href="http://www.ziqiang.net/">ziqiang.net</a></span>
             &nbsp;
-            admirable design by <span class="weak_highlight"><a href="http://www.renren.com/286685322/profile/">wiilen</a></span> &amp; engineering by <span class="weak_highlight"><a href="http://www.douban.com/people/sigma_root/">sigma</a></span>
+            remarkable design by <span class="weak_highlight"><a href="http://www.renren.com/286685322/profile/">wiilen</a></span> &amp; developing by <span class="weak_highlight"><a href="http://www.douban.com/people/sigma_root/">sigma</a></span>
         </div>
         <!--this is end of wrapper -->
         </div>

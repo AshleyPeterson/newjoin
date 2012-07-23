@@ -1,8 +1,6 @@
 newjoin
 =======
-字体
-图片展示（flip，zoomout）
-join要图
-content内容&效果
-nav点击效果
-favicon
+content内容可编辑
+重构优化代码
+添加所见即所得编辑功能
+图片上传功能

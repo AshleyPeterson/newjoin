@@ -1,11 +1,44 @@
+@font-face {
+    font-family: "Segoe UI";
+    src: url('../segoeui.ttf');
+}
+@font-face {
+    font-family: "Microsoft YaHei";
+    src: url('../msyahei.ttf');
+}
+@-webkit-keyframes moveFromRight {
+    from {
+        -webkit-transform: translateX(100%);
+    }
+    to {
+        -webkit-transform: translateX(0%);
+    }
+}
+@-webkit-keyframes scale {
+    from {
+        -webkit-transform: scale(2);
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+@-webkit-keyframes scale_reverse {
+    from {
+        -webkit-transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(2);
+    }
+}
 * {
     margin: 0;
     padding: 0;
     background-repeat: no-repeat;
 }
 body {
-    background-image: url('../pic/join.jpg');
+    background-image: url('../pic/back.jpg');
     margin: 0 auto;
+    font-family: "Microsoft YaHei";
     overflow-x: hidden;
 //    overflow-y: hidden;
 }
@@ -35,14 +68,9 @@ a:link,a:visited,a:active {
     background-color: #d54d34;
     background-image: url('../pic/join_03.gif');
     margin: 0 0 7px 0;
-    transition: background-image 0.5s;
-    -webkit-transition: background-image 0.5s;
 }
 #frame_left_logo:hover {
     background-image: url('../pic/join_01_03.gif');
-    cursor: pointer;
-    transition: background-image 0.5s;
-    -webkit-transition: background-image 0.5s;
 }
 .center_logo {
     list-style: none;
@@ -57,60 +85,44 @@ a:link,a:visited,a:active {
 .center_logo_right {
     margin: 0 0 7px 0;
 }
-#manage {
-    background-image: url('../pic/join_06.gif');
+#frame_left_logo,#frame_left_logo:hover,#manage,#manage:hover,#news,#news:hover,#tech,#tech:hover,#scheme,#scheme:hover,#resource,#resource:hover {
     transition: background-image 0.5s;
     -webkit-transition: background-image 0.5s;
+    -moz-transition: background-image 0.5s;
+    -o-transition: background-image 0.5s;
+}
+#frame_left_logo:hover,#manage:hover,#news:hover,#tech:hover,#scheme:hover,#resource:hover {
+    cursor: pointer;
+}
+#manage {
+    background-image: url('../pic/join_06.gif');
 }
 #manage:hover {
     background-image: url('../pic/join_01_06.gif');
-    cursor: pointer;
-    transition: background-image 0.5s;
-    -webkit-transition: background-image 0.5s;
 }
 #news {
     background-image: url('../pic/join_08.gif');
-    transition: background-image 0.5s;
-    -webkit-transition: background-image 0.5s;
 }
 #news:hover {
     background-image: url('../pic/join_01_08.gif');
-    cursor: pointer;
-    transition: background-image 0.5s;
-    -webkit-transition: background-image 0.5s;
 }
 #tech {
     background-image: url('../pic/join_11.gif');
-    transition: background-image 0.5s;
-    -webkit-transition: background-image 0.5s;
 }
 #tech:hover {
     background-image: url('../pic/join_01_11.gif');
-    cursor: pointer;
-    transition: background-image 0.5s;
-    -webkit-transition: background-image 0.5s;
 }
 #scheme {
     background-image: url('../pic/join_12.gif');
-    transition: background-image 0.5s;
-    -webkit-transition: background-image 0.5s;
 }
 #scheme:hover {
     background-image: url('../pic/join_01_12.gif');
-    cursor: pointer;
-    transition: background-image 0.5s;
-    -webkit-transition: background-image 0.5s;
 }
 #resource {
     background-image: url('../pic/join_15.gif');
-    transition: background-image 0.5s;
-    -webkit-transition: background-image 0.5s;
 }
 #resource:hover {
     background-image: url('../pic/join_01_15.gif');
-    cursor: pointer;
-    transition: background-image 0.5s;
-    -webkit-transition: background-image 0.5s;
 }
 #frame_right {
     width: 680px;
@@ -127,41 +139,40 @@ a:link,a:visited,a:active {
     width: 680px;
     height: 103px;
     border-left: solid 9px #d54d34;
-    margin: 0 0 37px 0;
+    margin: -140px 0 37px 0;
     padding: 0 0 0 19px;
-    margin-top: -140px;
 }
 #nav_for_site {
     visibility: visible;
     margin-top: 0;
 }
-.nav_animation {
+.nav_animation,.main_animation,.main_animation_join {
     animation: moveFromRight 500ms ease;
     -webkit-animation: moveFromRight 500ms ease;
 }
 .frame_right_nav li:nth-child(1),.nav_animation li:nth-child(1) {
     margin: 0;
     opacity: 1;
+    cursor: auto;
 }
-@-webkit-keyframes moveFromRight {
-    from {
-        -webkit-transform: translateX(100%);
-    }
-    to {
-        -webkit-transform: translateX(0%);
-    }
-}
-#arrow {
+.arrow {
     display: block;
     width: 29px;
     height: 29px;
     background-image: url('../pic/arrow.png');
 }
-#arrow:hover {
+.arrow_spec {
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    margin: 0 10px 0 0;
+    background-image: url('../pic/arrow.png');
+}
+.arrow:hover,.arrow_spec:hover {
     opacity: 0.5;
     cursor: pointer;
 }
-#center_name {
+.center_name {
     display: block;
     margin: 10px 0;
     font-size: 18px;
@@ -175,26 +186,98 @@ a:link,a:visited,a:active {
     margin: 0 0 0 18px;
     opacity: 0.5;
 }
-#site_name {
+.department:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.site_name {
     font-size: 24px;
     padding: 5px 0 0 0;
-    display: block;
+    display: inline-block;
 }
-#aboutus {
+#aboutus,#joinus {
     font-size: 60px;
     display: block;
+    font-family: "Segoe UI";
+    margin-top: -10px;
 }
 .frame_right_content {
     width: 680px;
     height: 273px;
     font-size: 14px;
-}
-.p_content {
-    display: inline-block;
+    margin: -273px 0 0 0;
+    display: none;
+    font-size: 14px;
+    text-indent: 28px;
     width: 646px;
     letter-spacing: 1px;
-    line-height: 17px;
-    margin: 5px 0;
+    line-height: 22px;
+}
+.main_animation {
+    height: 273px;
+    font-size: 14px;
+    text-indent: 28px;
+    width: 646px;
+    letter-spacing: 1px;
+    line-height: 22px;
+}
+.main_animation_join {
+    height: 413px;
+}
+#site_main {
+    margin: 0;
+    display: block;
+}
+#join_main {
+    color: #707373;
+    font-size: 15px;
+    padding: 0 0 0 30px;
+}
+.item_tag {
+    margin: 7px 28px 7px 0;
+}
+.input_tag {
+    width: 205px;
+    height: 26px;
+    margin: 0 10px 8px 0;
+    border: solid 1px #1ba1e2;
+}
+.user_defined,.menu_long,.menu_short,#join_main option {
+    color: #f0f0f0;
+    background-color: #424242;
+}
+.menu_short,.menu_long {
+    height: 26px;
+    outline: none;
+    border: 0px;
+    font-size: 14px;
+}
+.menu_short {
+    width: 60px;
+}
+.menu_long {
+    width: 207px;
+    margin: 0 0 8px 63px;
+}
+#join_main>textarea {
+    resize: none;
+    width: 475px;
+    height: 88px;
+    margin: 0 0 8px 63px;
+    border: solid 1px #1ba1e2;
+    color: #979797;
+    font-size: 14px;
+}
+#submit_button {
+    margin: 0 0 0 63px;
+    width: 72px;
+    height: 29px;
+    font-size: 20px;
+    color: #f0f0f0;
+    background-color: #8fc74b;
+    border: 0px;
+    cursor: pointer;
+    font-family: "Microsoft YaHei";
 }
 #frame_right_button {
     margin: 34px 0 0 0;
@@ -204,24 +287,58 @@ a:link,a:visited,a:active {
     display: inline-block;
     width: 106px;
     height: 106px;
-    background-color: #1ba1e2;
     margin: 0 0 0 4px;
     float: left;
+    overflow: hidden;
+    position: relative;
+}
+.show_pic a img {
+    height: 106px;
+    opacity: 0.7;
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
+}
+.show_pic a img:hover {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+.zoomout {
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
+    animation: scale_reverse 800ms ease;
+    -webkit-animation: scale_reverse 800ms ease;
+    -moz-animation: scale_reverse 800ms ease;
+    -o-animation: scale_reverse 800ms ease;
+}
+.zoomin {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    animation: scale 800ms ease;
+    -webkit-animation: scale 800ms ease;
+    -moz-animation: scale 800ms ease;
+    -o-animation: scale 800ms ease;
 }
 #frame_right_button li:nth-child(1) {
     margin: 0;
 }
 #frame_right_button li:nth-child(6) {
     margin: 0 0 0 28px;
-    background-image: url('../pic/total.gif');
-    background-position: -1875px 0px;
+    background-image: url('../pic/join.jpg');
     background-color: #8fc74b;
     transition: background-image 0.5s;
     -webkit-transition: background-image 0.5s;
 }
 #frame_right_button li:nth-child(6):hover {
-    background-image: url('../pic/total.gif');
-    background-position: -1982px 1px;
+    background-image: url('../pic/join_light.jpg');
     cursor: pointer;
     transition: background-image 0.5s;
     -webkit-transition: background-image 0.5s;
@@ -234,7 +351,7 @@ a:link,a:visited,a:active {
     font-size: 12px;
     color: #888;
     text-align: center;
-    margin: 5px 0;
+    margin: 10px 0 0 0;
 }
 .weak_highlight:hover {
     color: #555;
