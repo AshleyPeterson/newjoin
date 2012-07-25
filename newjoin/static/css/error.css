@@ -1,0 +1,31 @@
+@font-face {
+    font-family: "Segoe UI";
+    src: url('../fonts/segoeui.ttf');
+}
+* {
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+}
+body {
+    background-image: url('../pic/back.jpg');
+    margin: 0 auto;
+    overflow-x: hidden;
+    text-align: center;
+}
+.error {
+    font-family: "Segoe UI";
+    color: red;
+    font-weight: bold;
+    margin-top: 50px;
+}
+#return {
+    width: 72px;
+    height: 29px;
+    background-color: #8fc74b;
+    color: #f0f0f0;
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+    display: inline-block;
+    margin-top: 50px;
+}

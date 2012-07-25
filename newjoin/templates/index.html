@@ -8,11 +8,11 @@ PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         <!--[if lt IE 9]>
         <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
         <![endif]-->
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/shadowbox.css" />
-        <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
-        <script type="text/javascript" src="js/slide.js"></script>
-        <script type="text/javascript" src="js/shadowbox.js"></script>
+        <link rel="stylesheet" type="text/css" href="static/css/index.css" />
+        <link rel="stylesheet" type="text/css" href="static/css/shadowbox.css" />
+        <script type="text/javascript" src="static/js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript" src="static/js/slide.js"></script>
+        <script type="text/javascript" src="static/js/shadowbox.js"></script>
         <script type="text/javascript">
             Shadowbox.init({
                     overlayOpacity: 0.9
@@ -42,6 +42,8 @@ PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                 <span class="arrow_spec" onclick="nav_slide('nav_for_join','nav_for_site');content_slide('join_main','site_main');"></span>
                 <span class="site_name">自强学堂网站</span>
                 <span id="joinus">Join Us</span>
+		<span class="error" id="err"></span>
+		<br />
             </div>
             <div class="frame_right_nav" id="nav_for_manage">
                 <span class="arrow" onclick="nav_slide('nav_for_manage','nav_for_site');content_slide('manage_main','site_main');"></span>
@@ -57,9 +59,9 @@ PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                 <span class="center_name">新闻中心</span>
                 <ul>
                     <li class="department">中心简介</li>
-                    <li class="department" onclick="content_slide('manage_main','reporter');">记者团</li>
-                    <li class="department" onclick="content_slide('manage_main','photo');">摄影组</li>
-                    <li class="department" onclick="content_slide('manage_main','wireless');">无线服务部</li>
+                    <li class="department" onclick="content_slide('news_main','reporter');">记者团</li>
+                    <li class="department" onclick="content_slide('news_main','photo');">摄影组</li>
+                    <li class="department" onclick="content_slide('news_main','wireless');">无线服务部</li>
                 </ul>
             </div>
             <div class="frame_right_nav" id="nav_for_tech">
@@ -67,8 +69,8 @@ PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                 <span class="center_name">技术中心</span>
                 <ul>
                     <li class="department">中心简介</li>
-                    <li class="department" onclick="content_slide('manage_main','design');">视觉设计</li>
-                    <li class="department" onclick="content_slide('manage_main','dev');">代码研发</li>
+                    <li class="department" onclick="content_slide('tech_main','design');">视觉设计部</li>
+                    <li class="department" onclick="content_slide('tech_main','dev');">代码研发部</li>
                 </ul>
             </div>
             <div class="frame_right_nav" id="nav_for_scheme">
@@ -76,8 +78,9 @@ PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                 <span class="center_name">策划中心</span>
                 <ul>
                     <li class="department">中心简介</li>
-                    <li class="department" onclick="content_slide('manage_main','pr');">公关企划部</li>
-                    <li class="department" onclick="content_slide('manage_main','liaison');">外联部</li>
+                    <li class="department" onclick="content_slide('scheme_main','pr');">公关企划部</li>
+                    <li class="department" onclick="content_slide('scheme_main','liaison');">外联部</li>
+                    <li class="department" onclick="content_slide('scheme_main','netpromote');">网络推广部</li>
                 </ul>
             </div>
             <div class="frame_right_nav" id="nav_for_resource">
@@ -85,111 +88,148 @@ PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                 <span class="center_name">栏目中心</span>
                 <ul>
                     <li class="department">中心简介</li>
-                    <li class="department" onclick="content_slide('manage_main','miao');">毛线社区</li>
-                    <li class="department" onclick="content_slide('manage_main','edu');">自强科教</li>
-                    <li class="department" onclick="content_slide('manage_main','bbs');">茶馆BBS</li>
-                    <li class="department" onclick="content_slide('manage_main','video');">视频部</li>
+                    <li class="department" onclick="content_slide('resource_main','miao');">毛线社区</li>
+                    <li class="department" onclick="content_slide('resource_main','edu');">自强科教</li>
+                    <li class="department" onclick="content_slide('resource_main','bbs');">茶馆BBS</li>
+                    <li class="department" onclick="content_slide('resource_main','video');">视频部</li>
                 </ul>
             </div>
+<!--	{% if error %} -->
+<!--	<span class="error">Please complete all columns in the form</span> -->
+<!--	{% endif %} -->
 
 <!-------------------------------------------------------------------------------->
             <!-- site_main start -->
             <p class="frame_right_content" id="site_main">
-                我们以“服务学生生活，记录学校发展”为己任，立足于校园生活，为打造一流的武汉大学门户网站而努力。
-                <br />
-                我们有五大中心，新闻，栏目，策划，技术，站管，各个中心部门各司其职。共同构成了自强完整的运行体系。
-                <br />
-                我们不断追求成长，顺应时代潮流改革内部体制，不断创新，不断尝试，不断发展，引领校园生活。
-                <br />
-                我们充分融入学生的学习生活中，记录校园的点滴，缩短学生间彼此的距离，成为一座坚实的桥梁。
-                <br />
-                我们有着良好的氛围，让你找到心灵的港湾，成员之间相互关心、相互帮助，将自强变成了一个大家庭。
-                <br />
-                我们组织各种各样的活动，从部门内部，整个团体，到整个校园，让你充分感受到自强的魅力。
+	    {% for i in content %}
+	    {{ i.sitemain }}
+	    {% endfor %}
             </p>
             <!-- site_main end -->
 
 <!-------------------------------------------------------------------------------->
             <!-- manage_main start -->
             <p class="frame_right_content" id="manage_main">
-            站务管理中心介绍
+	    {% for i in content %}
+	    {{ i.managemain }}
+	    {% endfor %}
             </p>
             <!-- manage_main end -->
             <p class="frame_right_content" id="coordinate">
-            协调管理部介绍
+	    {% for i in content %}
+	    {{ i.coordinate }}
+	    {% endfor %}
             </p>
             <p class="frame_right_content" id="teambuild">
-            团队建设部介绍
+	    {% for i in content %}
+	    {{ i.teambuild }}
+	    {% endfor %}
             </p>
 
 <!-------------------------------------------------------------------------------->
             <!-- news_main start -->
             <p class="frame_right_content" id="news_main">
-            新闻中心的介绍
+	    {% for i in content %}
+	    {{ i.newsmain }}
+	    {% endfor %}
             </p>
             <!-- news_main end -->
             <p class="frame_right_content" id="reporter">
-            记者团介绍
+	    {% for i in content %}
+	    {{ i.reporter }}
+	    {% endfor %}
             </p>
             <p class="frame_right_content" id="photo">
-            摄影组介绍
+	    {% for i in content %}
+	    {{ i.photo }}
+	    {% endfor %}
             </p>
             <p class="frame_right_content" id="wireless">
-            无线服务部介绍
+	    {% for i in content %}
+	    {{ i.wireless }}
+	    {% endfor %}
             </p>
 
 <!-------------------------------------------------------------------------------->
             <!-- tech_main start -->
             <p class="frame_right_content" id="tech_main">
-            技术中心的介绍
+	    {% for i in content %}
+	    {{ i.techmain }}
+	    {% endfor %}
             </p>
             <!-- tech_main end -->
             <p class="frame_right_content" id="design">
-            视觉设计部介绍
+	    {% for i in content %}
+	    {{ i.design }}
+	    {% endfor %}
             </p>
             <p class="frame_right_content" id="dev">
-            代码研发部介绍
+	    {% for i in content %}
+	    {{ i.dev }}
+	    {% endfor %}
             </p>
 
 <!-------------------------------------------------------------------------------->
             <!-- scheme_main start -->
             <p class="frame_right_content" id="scheme_main">
-            策划中心的介绍
+	    {% for i in content %}
+	    {{ i.schememain }}
+	    {% endfor %}
             </p>
             <!-- scheme_main end -->
             <p class="frame_right_content" id="pr">
-            公关企划部介绍
+	    {% for i in content %}
+	    {{ i.pr }}
+	    {% endfor %}
             </p>
             <p class="frame_right_content" id="liaison">
-            外联部介绍
+	    {% for i in content %}
+	    {{ i.liaison }}
+	    {% endfor %}
+            </p>
+            <p class="frame_right_content" id="netpromote">
+	    {% for i in content %}
+	    {{ i.netpromote }}
+	    {% endfor %}
             </p>
 
 
 <!-------------------------------------------------------------------------------->
             <!-- resource_main start -->
             <p class="frame_right_content" id="resource_main">
-            栏目中心的介绍
+	    {% for i in content %}
+	    {{ i.resourcemain }}
+	    {% endfor %}
             </p>
             <!-- resource_main end -->
             <p class="frame_right_content" id="miao">
-            毛线社区介绍
+	    {% for i in content %}
+	    {{ i.miao }}
+	    {% endfor %}
             </p>
             <p class="frame_right_content" id="edu">
-            自强科教介绍
+	    {% for i in content %}
+	    {{ i.edu }}
+	    {% endfor %}
             </p>
             <p class="frame_right_content" id="bbs">
-            茶馆BBS介绍
+	    {% for i in content %}
+	    {{ i.bbs }}
+	    {% endfor %}
             </p>
             <p class="frame_right_content" id="video">
-            视频部介绍
+	    {% for i in content %}
+	    {{ i.video }}
+	    {% endfor %}
             </p>
 
 <!-------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------->
             <!--start apply form-->
-            <form>
+            <form action="" method="post">
             <p class="frame_right_content" id="join_main">
                 <span class="item_tag">姓名</span>
-                <input type="text" name="yourname" class="input_tag" />
+                <input type="text" name="name" class="input_tag" id="name"/>
                 <select name="sex" class="menu_short">
                     <option value="none" selected="selected">性别</option>
                     <option value="male">男</option>
@@ -197,7 +237,7 @@ PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                 </select>
                 <br />
                 <span class="item_tag">学院</span>
-                <input type="text" name="collegename" class="input_tag" />
+                <input type="text" name="collegename" class="input_tag" id="college"/>
                 <select name="grade" class="menu_short">
                     <option value="none" selected="selected">年级</option>
                     <option value="junior1">大一</option>
@@ -210,84 +250,84 @@ PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                 </select>
                 <br />
                 <span class="item_tag">手机</span>
-                <input type="text" name="mobile" class="input_tag" />
+                <input type="text" name="mobile" class="input_tag" id="mobile"/>
                 <br />
                 <span class="item_tag">寝室</span>
-                <input type="text" name="dorm" class="input_tag" />
+                <input type="text" name="dorm" class="input_tag" id="dorm"/>
                 <br />
                 <span class="item_tag">邮箱</span>
-                <input type="text" name="mail" class="input_tag" />
+                <input type="text" name="mail" class="input_tag" id="mail"/>
                 <br />
                 <span class="item_tag">优点</span>
-                <input type="text" name="advantages" class="input_tag" />
+                <input type="text" name="advantages" class="input_tag" id="advantg"/>
                 <br />
                 <select name="first_department" class="menu_long">
                     <option value="none" selected="selected">最想加入的部门</option>
                     <option value="design">视觉设计部</option>
-                    <option value="dev">开发部</option>
-                    <option value="pm">PM小组</option>
+                    <option value="dev">代码研发部</option>
                     <option value="teambuild">团队建设部</option>
                     <option value="coordinate">协调管理部</option>
-                    <option value="hr">人力资源小组</option>
-                    <option value="video">视频部</option>
                     <option value="reporter">记者团</option>
+                    <option value="video">摄影组</option>
+                    <option value="wireless">无线服务部</option>
                     <option value="pr">公关企划部</option>
                     <option value="liaison">外联部</option>
-                    <option value="wireless">无线服务部</option>
+                    <option value="netpromote">网络推广部</option>
                     <option value="miao">毛线社区</option>
                     <option value="edu">自强科教</option>
                     <option value="bbs">茶馆BBS</option>
+                    <option value="video">视频部</option>
                 </select>
                 <br />
                 <select name="second_department" class="menu_long">
                     <option value="none" selected="selected">次想加入的部门</option>
                     <option value="design">视觉设计部</option>
-                    <option value="dev">开发部</option>
-                    <option value="pm">PM小组</option>
+                    <option value="dev">代码研发部</option>
                     <option value="teambuild">团队建设部</option>
                     <option value="coordinate">协调管理部</option>
-                    <option value="hr">人力资源小组</option>
-                    <option value="video">视频部</option>
                     <option value="reporter">记者团</option>
+                    <option value="video">摄影组</option>
+                    <option value="wireless">无线服务部</option>
                     <option value="pr">公关企划部</option>
                     <option value="liaison">外联部</option>
-                    <option value="wireless">无线服务部</option>
+                    <option value="netpromote">网络推广部</option>
                     <option value="miao">毛线社区</option>
                     <option value="edu">自强科教</option>
                     <option value="bbs">茶馆BBS</option>
+                    <option value="video">视频部</option>
                 </select>
                 <br />
-                <textarea onfocus="this.value='';this.style.color='#424242'" onblur="this.value='为什么要加入自强，请给出自强录用你的理由。';this.style.color='#979797'">为什么要加入自强，请给出自强录用你的理由。</textarea>
+                <textarea name="reason" onfocus="if(this.value=='为什么要加入自强，请给出自强录用你的理由。'){this.value=''};this.style.color='#424242'" onblur="if(this.value==''){this.value='为什么要加入自强，请给出自强录用你的理由。';this.style.color='#979797'}" id="reason">为什么要加入自强，请给出自强录用你的理由。</textarea>
                 <br />
-                <input type="submit" value="报名" id="submit_button" />
+                <input type="submit" value="报名" id="submit_button" onclick="return countchar()" />
             </p>
             </form>
             <!--end apply form-->
             <div id="frame_right_button">
                 <ul>
                     <li class="show_pic">
-                        <a href="pic/pic1.jpg" rel="shadowbox[ziqiang]" title="说明文字">
-                            <img src="pic/pic1.jpg" alt="pic1" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic1" />
+                        <a href="static/pic/pic1.jpg" rel="shadowbox[ziqiang]" title="说明文字">
+                            <img src="static/pic/pic1.jpg" alt="pic1" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic1" />
                         </a>
                     </li>
                     <li class="show_pic">
-                        <a href="pic/pic2.jpg" rel="shadowbox[ziqiang]" title="说明文字">
-                            <img src="pic/pic2.jpg" alt="pic2" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic2" />
+                        <a href="static/pic/pic2.jpg" rel="shadowbox[ziqiang]" title="说明文字">
+                            <img src="static/pic/pic2.jpg" alt="pic2" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic2" />
                         </a>
                     </li>
                     <li class="show_pic">
-                        <a href="pic/pic3.jpg" rel="shadowbox[ziqiang]" title="说明文字">
-                            <img src="pic/pic3.jpg" alt="pic3" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic3" />
+                        <a href="static/pic/pic3.jpg" rel="shadowbox[ziqiang]" title="说明文字">
+                            <img src="static/pic/pic3.jpg" alt="pic3" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic3" />
                         </a>
                     </li>
                     <li class="show_pic">
-                        <a href="pic/pic4.jpg" rel="shadowbox[ziqiang]" title="说明文字">
-                            <img src="pic/pic4.jpg" alt="pic4" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic4" />
+                        <a href="static/pic/pic4.jpg" rel="shadowbox[ziqiang]" title="说明文字">
+                            <img src="static/pic/pic4.jpg" alt="pic4" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic4" />
                         </a>
                     </li>
                     <li class="show_pic">
-                        <a href="pic/pic5.jpg" rel="shadowbox[ziqiang]" title="说明文字">
-                            <img src="pic/pic5.jpg" alt="pic5" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic5" />
+                        <a href="static/pic/pic5.jpg" rel="shadowbox[ziqiang]" title="说明文字">
+                            <img src="static/pic/pic5.jpg" alt="pic5" onmouseover="this.className='zoomin'" onmouseout="this.className='zoomout'" id="pic5" />
                         </a>
                     </li>
                     <li class="show_pic" onclick="nav_slide('nav_for_site','nav_for_join');content_slide('site_main','join_main');"></li>

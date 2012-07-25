@@ -56,3 +56,49 @@ function content_slide(hideid,showid) {
     $("#pic4").removeClass("zoomout");
     $("#pic5").removeClass("zoomout");
 }
+
+function countchar() {
+	var sizeName=$("#name").val().length;
+	var sizeCollege=$("#college").val().length;
+	var sizeMobile=$("#mobile").val().length;
+	var sizeDorm=$("#dorm").val().length;
+	var sizeMail=$("#mail").val().length;
+	var sizeAdvantg=$("#advantg").val().length;
+	var sizeReason=$("#reason").val().length;
+	if(sizeName>10) {
+		$("#err").html('姓名不能超过10个字');
+		return false;
+	}
+	else if(sizeCollege>10) {
+		$("#err").html('学院不能超过10个字');
+		return false;
+	}
+	else if(sizeMobile>11) {
+		$("#err").html('手机不能超过11个数字');
+		return false;
+	}
+	else if(sizeDorm>10) {
+		$("#err").html('寝室不能超过10个字');
+		return false;
+	}
+	else if(sizeMail>30) {
+		$("#err").html('邮箱不能超过30个字');
+		return false;
+	}
+	else if(sizeAdvantg>10) {
+		$("#err").html('优点不能超过10个字');
+		return false;
+	}
+	else if(sizeReason>200) {
+		$("#err").html('理由不能超过200个字');
+		return false;
+	}
+	else if(sizeName==0||sizeCollege==0||sizeMobile==0||sizeDorm==0||sizeMail==0||sizeAdvantg==0||sizeReason==0) {
+		$("#err").html('栏目不能为空');
+		return false;
+	}
+	else {
+		return true
+	}
+}
+

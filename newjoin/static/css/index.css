@@ -1,12 +1,28 @@
 @font-face {
     font-family: "Segoe UI";
-    src: url('../segoeui.ttf');
+    src: url('../fonts/segoeui.ttf');
 }
 @font-face {
     font-family: "Microsoft YaHei";
-    src: url('../msyahei.ttf');
+    src: url('../fonts/msyahei.ttf');
 }
 @-webkit-keyframes moveFromRight {
+    from {
+        -webkit-transform: translateX(100%);
+    }
+    to {
+        -webkit-transform: translateX(0%);
+    }
+}
+@-moz-keyframes moveFromRight {
+    from {
+        -webkit-transform: translateX(100%);
+    }
+    to {
+        -webkit-transform: translateX(0%);
+    }
+}
+@-o-keyframes moveFromRight {
     from {
         -webkit-transform: translateX(100%);
     }
@@ -22,7 +38,39 @@
         -webkit-transform: scale(1);
     }
 }
+@-moz-keyframes scale {
+    from {
+        -webkit-transform: scale(2);
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+@-o-keyframes scale {
+    from {
+        -webkit-transform: scale(2);
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
+}
 @-webkit-keyframes scale_reverse {
+    from {
+        -webkit-transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(2);
+    }
+}
+@-moz-keyframes scale_reverse {
+    from {
+        -webkit-transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(2);
+    }
+}
+@-o-keyframes scale_reverse {
     from {
         -webkit-transform: scale(1);
     }
@@ -208,8 +256,9 @@ a:link,a:visited,a:active {
     margin: -273px 0 0 0;
     display: none;
     font-size: 14px;
-    text-indent: 28px;
-    width: 646px;
+    padding-left: 28px;
+    /*text-indent: 28px;*/
+    width: 630px;
     letter-spacing: 1px;
     line-height: 22px;
 }
@@ -356,4 +405,9 @@ a:link,a:visited,a:active {
 .weak_highlight:hover {
     color: #555;
     cursor: pointer;
+}
+.error {
+    font-family: "Segoe UI";
+    color: red;
+    font-weight: bold;
 }
