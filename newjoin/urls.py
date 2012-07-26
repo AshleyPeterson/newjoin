@@ -9,7 +9,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
 	#(r'^error/$',basic),
 	(r'^$',submitHandler),
-     	url(r'^admin/', include(admin.site.urls)),
+    (r'^favicon\.ico$','django.views.generic.simple.redirect_to',{'url':'/static/pic/favicon.ico'}),
+    url(r'^admin/', include(admin.site.urls)),
     # Examples:
     # url(r'^$', 'newjoin.views.home', name='home'),
     # url(r'^newjoin/', include('newjoin.foo.urls')),
